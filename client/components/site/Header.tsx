@@ -48,7 +48,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <Button asChild className="bg-primary hover:bg-primary/90">
-            <Link to="/get-involved">Join Revamp</Link>
+            <Link to="/contact">Start a Project</Link>
           </Button>
         </div>
 
@@ -78,7 +78,7 @@ export default function Header() {
               </NavLink>
             ))}
             <Button asChild className="w-full">
-              <Link to="/get-involved">Join Revamp</Link>
+              <Link to="/contact">Start a Project</Link>
             </Button>
           </div>
         </div>

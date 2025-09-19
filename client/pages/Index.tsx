@@ -15,16 +15,30 @@ export default function Index() {
               Revamp — Agentic AI & Tech Consulting
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              We partner with companies to design and ship modern AI systems and technology solutions. Minimal, reliable, production-focused.
+              We help teams ship agentic AI and modern software—on time. Strategy → prototypes → production, with measurable impact.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link to="/get-involved" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                Get Involved
+              <Link to="/contact" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                Start a Project
               </Link>
-              <Link to="/services" className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 transition-colors hover:bg-accent hover:text-accent-foreground">
-                Our Services
+              <Link to="/projects" className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 transition-colors hover:bg-accent hover:text-accent-foreground">
+                See Case Studies
               </Link>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Trusted by */}
+      <section className="py-8">
+        <div className="container">
+          <Reveal className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-8 opacity-80">
+            {["Acme Corp","Orion","Nimbus","Helix","Vector"].map((n) => (
+              <div key={n} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="h-6 w-6 rounded bg-primary/15" />
+                <span>{n}</span>
+              </div>
+            ))}
           </Reveal>
         </div>
       </section>
@@ -100,6 +114,32 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Process */}
+      <section className="py-16 md:py-24 bg-secondary/30">
+        <div className="container">
+          <Reveal className="mb-10 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">How We Work</h2>
+            <p className="mt-2 text-muted-foreground">Short cycles, close collaboration, and production-grade delivery.</p>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-4">
+            {[
+              {t:"Discover",d:"We align on goals, constraints, and KPIs.",i:<svg viewBox='0 0 24 24' className='h-6 w-6' fill='none' stroke='currentColor' strokeWidth='2'><circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 3'/></svg>},
+              {t:"Design",d:"System design, data, and evaluation plan.",i:<svg viewBox='0 0 24 24' className='h-6 w-6' fill='none' stroke='currentColor' strokeWidth='2'><path d='M4 7h16M4 12h10M4 17h7'/></svg>},
+              {t:"Build",d:"Iterate quickly with real users and data.",i:<svg viewBox='0 0 24 24' className='h-6 w-6' fill='none' stroke='currentColor' strokeWidth='2'><path d='M3 12h18'/><path d='M12 3v18'/></svg>},
+              {t:"Ship",d:"Deploy, monitor, and improve continuously.",i:<svg viewBox='0 0 24 24' className='h-6 w-6' fill='none' stroke='currentColor' strokeWidth='2'><path d='M5 12l5 5L20 7'/></svg>},
+            ].map((s) => (
+              <Reveal key={s.t}>
+                <TiltCard className="rounded-xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary">{s.i}</div>
+                  <h3 className="font-semibold">{s.t}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
+                </TiltCard>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Case studies preview */}
       <section className="py-16 md:py-24">
         <div className="container">
@@ -124,6 +164,22 @@ export default function Index() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/15 via-transparent to-[hsl(19,100%,50%)/15]" />
+        <div className="container py-16 md:py-20">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Ready to build?</h2>
+            <p className="mt-2 text-muted-foreground">Book a quick discovery call and we’ll scope a path to value in days, not months.</p>
+            <div className="mt-6">
+              <Link to="/contact" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md">
+                Start a Project
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>
