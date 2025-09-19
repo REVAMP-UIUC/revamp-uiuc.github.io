@@ -18,8 +18,8 @@ export default function Index() {
               We help teams ship agentic AI and modern software—on time. Strategy → prototypes → production, with measurable impact.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link to="/contact" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                Start a Project
+              <Link to="/get-involved" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                Get Involved
               </Link>
               <Link to="/projects" className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 transition-colors hover:bg-accent hover:text-accent-foreground">
                 See Case Studies
@@ -172,11 +172,11 @@ export default function Index() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/15 via-transparent to-[hsl(19,100%,50%)/15]" />
         <div className="container py-16 md:py-20">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Ready to build?</h2>
-            <p className="mt-2 text-muted-foreground">Book a quick discovery call and we’ll scope a path to value in days, not months.</p>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Ready to get involved?</h2>
+            <p className="mt-2 text-muted-foreground">Apply to join Revamp and collaborate on real AI and tech projects.</p>
             <div className="mt-6">
-              <Link to="/contact" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md">
-                Start a Project
+              <Link to="/get-involved" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md">
+                Get Involved
               </Link>
             </div>
           </Reveal>

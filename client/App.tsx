@@ -13,7 +13,6 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
 import GetInvolved from "@/pages/GetInvolved";
-import Contact from "@/pages/Contact";
 import { ThemeProvider } from "next-themes";
 
 const queryClient = new QueryClient();
@@ -32,7 +31,6 @@ const App = () => (
               <Route path="services" element={<Services />} />
               <Route path="projects" element={<Projects />} />
               <Route path="get-involved" element={<GetInvolved />} />
-              <Route path="contact" element={<Contact />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

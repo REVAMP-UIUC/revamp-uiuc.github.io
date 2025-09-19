@@ -10,7 +10,6 @@ const navItems = [
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Case Studies" },
   { to: "/get-involved", label: "Get Involved" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -48,7 +47,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <Button asChild className="bg-primary hover:bg-primary/90">
-            <Link to="/contact">Start a Project</Link>
+            <Link to="/get-involved">Get Involved</Link>
           </Button>
         </div>
 
@@ -78,7 +77,7 @@ export default function Header() {
               </NavLink>
             ))}
             <Button asChild className="w-full">
-              <Link to="/contact">Start a Project</Link>
+              <Link to="/get-involved">Get Involved</Link>
             </Button>
           </div>
         </div>

@@ -28,7 +28,6 @@ export default function Footer() {
             <h4 className="mb-3 text-sm font-semibold">Get In Touch</h4>
             <ul className="space-y-2 text-sm">
               <li><Link className="hover:text-primary" to="/get-involved">Join</Link></li>
-              <li><Link className="hover:text-primary" to="/contact">Contact</Link></li>
               <li>
                 <a className="inline-flex items-center gap-2 hover:text-primary" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
                   <Linkedin className="h-4 w-4" /> LinkedIn
