@@ -5,6 +5,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center;
+  }
+  .mask-fade {
+    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 70%);
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 70%);
+  }
+}
+
 @layer base {
   /**
    * Tailwind CSS theme
