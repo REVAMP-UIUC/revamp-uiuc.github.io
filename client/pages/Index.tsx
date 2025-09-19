@@ -1,5 +1,5 @@
 import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   return (
@@ -16,12 +16,12 @@ export default function Index() {
               We partner with companies to design and ship modern AI systems and technology solutions. Minimal, reliable, production-focused.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="/get-involved" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <Link to="/get-involved" className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                 Get Involved
-              </a>
-              <a href="/services" className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 transition-colors hover:bg-accent hover:text-accent-foreground">
+              </Link>
+              <Link to="/services" className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 transition-colors hover:bg-accent hover:text-accent-foreground">
                 Our Services
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function Index() {
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Areas of Expertise</h2>
               <p className="mt-2 text-muted-foreground max-w-prose">From agentic AI to end-to-end integrations, our teams deliver high-impact outcomes.</p>
             </div>
-            <a href="/services" className="hidden md:inline text-sm hover:text-primary">Explore services →</a>
+            <Link to="/services" className="hidden md:inline text-sm hover:text-primary">Explore services →</Link>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -102,18 +102,18 @@ export default function Index() {
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Selected Work</h2>
               <p className="mt-2 text-muted-foreground max-w-prose">Highlights from projects where we shipped measurable results.</p>
             </div>
-            <a href="/projects" className="hidden md:inline text-sm hover:text-primary">See all →</a>
+            <Link to="/projects" className="hidden md:inline text-sm hover:text-primary">See all →</Link>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {[
               { title: "Support Agent that solves 40% of tickets", desc: "Multi-tool agent with memory, search, and integrations.", tag: "Agentic AI" },
               { title: "Data pipeline cutting reporting time by 80%", desc: "Automations across SaaS tools with robust monitoring.", tag: "Automation" },
             ].map((c) => (
-              <a href="/projects" key={c.title} className="group rounded-xl border bg-card p-6 shadow-sm transition hover:shadow-md">
+              <Link to="/projects" key={c.title} className="group rounded-xl border bg-card p-6 shadow-sm transition hover:shadow-md">
                 <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">{c.tag}</span>
                 <h3 className="mt-3 text-lg font-semibold group-hover:text-primary">{c.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{c.desc}</p>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
