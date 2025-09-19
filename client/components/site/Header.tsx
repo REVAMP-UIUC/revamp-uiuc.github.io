@@ -24,9 +24,14 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/70 ${scrolled ? "bg-white/90 shadow-sm" : "bg-white/70"}`}>
+    <header
+      className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/70 ${scrolled ? "bg-white/90 shadow-sm" : "bg-white/70"}`}
+    >
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-xl font-bold tracking-tight"
+        >
           <Logo className="h-6 w-6" />
           <span className="sr-only">Revamp</span>
         </Link>

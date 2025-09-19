@@ -14,8 +14,16 @@
     background-position: center;
   }
   .mask-fade {
-    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 70%);
-    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 70%);
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      #000 40%,
+      transparent 70%
+    );
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      #000 40%,
+      transparent 70%
+    );
   }
 }
 

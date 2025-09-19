@@ -21,7 +21,9 @@ export default function TiltCard({
     const py = (e.clientY - rect.top) / rect.height - 0.5;
     const rx = (+py * maxTilt).toFixed(2);
     const ry = (-px * maxTilt).toFixed(2);
-    setStyle({ transform: `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)` });
+    setStyle({
+      transform: `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`,
+    });
   }
   function onLeave() {
     setStyle({ transform: "rotateX(0deg) rotateY(0deg)" });

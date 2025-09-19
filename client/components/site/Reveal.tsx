@@ -43,7 +43,13 @@ export default function Reveal({
   };
 
   return (
-    <Tag ref={ref} initial="hidden" animate={controls} variants={variants} className={className}>
+    <Tag
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+      className={className}
+    >
       {children}
     </Tag>
   );
