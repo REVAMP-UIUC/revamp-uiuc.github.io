@@ -57,7 +57,11 @@ export default function Header() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input hover:bg-accent"
           >
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            {theme === "dark" ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
           </button>
           <Button asChild className="bg-primary hover:bg-primary/90">
             <Link to="/get-involved">Get Involved</Link>
@@ -95,7 +99,11 @@ export default function Header() {
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input hover:bg-accent"
               >
-                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
               </button>
               <Button asChild className="flex-1">
                 <Link to="/get-involved">Get Involved</Link>
