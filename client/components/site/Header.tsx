@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./Logo";
+import { useTheme } from "next-themes";
 
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/projects", label: "Case Studies" },
   { to: "/get-involved", label: "Get Involved" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
@@ -51,6 +52,13 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          <button
+            aria-label="Toggle theme"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input hover:bg-accent"
+          >
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
           <Button asChild className="bg-primary hover:bg-primary/90">
             <Link to="/get-involved">Get Involved</Link>
           </Button>
@@ -81,9 +89,18 @@ export default function Header() {
                 {item.label}
               </NavLink>
             ))}
-            <Button asChild className="w-full">
-              <Link to="/get-involved">Get Involved</Link>
-            </Button>
+            <div className="flex items-center gap-2 pt-2">
+              <button
+                aria-label="Toggle theme"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input hover:bg-accent"
+              >
+                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </button>
+              <Button asChild className="flex-1">
+                <Link to="/get-involved">Get Involved</Link>
+              </Button>
+            </div>
           </div>
         </div>
       )}

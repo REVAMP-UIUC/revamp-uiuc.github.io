@@ -11,7 +11,6 @@ import NotFound from "./pages/NotFound";
 import Layout from "@/components/site/Layout";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
-import Projects from "@/pages/Projects";
 import GetInvolved from "@/pages/GetInvolved";
 import { ThemeProvider } from "next-themes";
 
@@ -29,7 +28,6 @@ const App = () => (
               <Route index element={<Index />} />
               <Route path="about" element={<About />} />
               <Route path="services" element={<Services />} />
-              <Route path="projects" element={<Projects />} />
               <Route path="get-involved" element={<GetInvolved />} />
             </Route>
             <Route path="*" element={<NotFound />} />
