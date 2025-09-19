@@ -15,9 +15,13 @@ const navItems = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  typeof window !== "undefined" &&
+    window.addEventListener("scroll", () => setScrolled(window.scrollY > 4), { passive: true });
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/70">
+    <header className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/70 ${scrolled ? "bg-white/90 shadow-sm" : "bg-white/70"}`}>
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
           <Logo className="h-6 w-6" />
@@ -30,7 +34,7 @@ export default function Header() {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `transition-colors hover:text-primary ${isActive ? "text-primary" : "text-foreground/80"}`
+                `relative pb-1 transition-colors hover:text-primary ${isActive ? "text-primary" : "text-foreground/80"} after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-[hsl(19,100%,50%)] after:transition-transform hover:after:scale-x-100`
               }
             >
               {item.label}
