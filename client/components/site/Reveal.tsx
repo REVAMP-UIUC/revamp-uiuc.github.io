@@ -1,6 +1,5 @@
 import { motion, useAnimation, Variants } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useEffect, useRef } from "react";
 
 export default function Reveal({
   children,
@@ -14,11 +13,25 @@ export default function Reveal({
   as?: any;
 }) {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (inView) controls.start("visible");
-  }, [controls, inView]);
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      controls.start("visible");
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) controls.start("visible");
+        }
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [controls]);
 
   const variants: Variants = {
     hidden: { opacity: 0, y: 24 },
