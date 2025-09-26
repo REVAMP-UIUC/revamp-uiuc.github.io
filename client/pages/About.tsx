@@ -6,7 +6,7 @@ import { Linkedin } from "lucide-react";
 export default function About() {
   const disciplines = [
     {
-      title: "Computer Science",
+      title: "Computer Science and Statistics",
       desc: "Systems, full‑stack product, agent frameworks, tooling, and reliable shipping from prototype to production.",
       icon: (
         <svg
@@ -22,7 +22,7 @@ export default function About() {
       ),
     },
     {
-      title: "Statistics",
+      title: "Systems Engineering",
       desc: "Experiment design, evaluation, and metrics for agentic systems. We quantify impact with robust analyses.",
       icon: (
         <svg
@@ -38,7 +38,7 @@ export default function About() {
       ),
     },
     {
-      title: "Information Sciences (Data Science)",
+      title: "Information Sciences and Data Science",
       desc: "Retrieval, embeddings, and knowledge systems. Clean data pipelines that power RAG and search.",
       icon: (
         <svg
@@ -55,7 +55,7 @@ export default function About() {
       ),
     },
     {
-      title: "Finance (Data Science)",
+      title: "Finance and Data Science",
       desc: "ROI modeling, dashboards, and decision support. We align AI investments with measurable business value.",
       icon: (
         <svg
@@ -87,7 +87,7 @@ export default function About() {
       ),
     },
     {
-      title: "Systems Engineering",
+      title: "Physics",
       desc: "Architecture, reliability, and automation: CI/CD, observability, and scalable foundations in cloud.",
       icon: (
         <svg
@@ -105,44 +105,44 @@ export default function About() {
 
   const members = [
     {
-      name: "Computer Science Member",
-      role: "Computer Science",
+      name: "Raaghav Pillai",
+      role: "Computer Science and Statistics",
       initials: "CS",
       bio: "Builds agent frameworks, full‑stack, and tooling. Focus on product velocity.",
       linkedin: "#",
     },
     {
-      name: "Statistics Member",
-      role: "Statistics",
-      initials: "ST",
+      name: "Diti Chhaproo",
+      role: "Systems Engineering",
+      initials: "SE",
       bio: "Designs experiments and metrics; evaluates agent systems rigorously.",
       linkedin: "#",
     },
     {
-      name: "Information Sciences Member",
-      role: "Information Sciences (Data Science)",
+      name: "Swarnika Bhardwaj",
+      role: "Information Sciences and Data Science",
       initials: "IS",
       bio: "Leads retrieval and RAG pipelines; owns data quality and search.",
       linkedin: "#",
     },
     {
-      name: "Finance DS Member",
-      role: "Finance (Data Science)",
+      name: "Nakul Jindal",
+      role: "Finance and Data Science",
       initials: "FD",
       bio: "Models ROI and risk; creates dashboards and decision support.",
       linkedin: "#",
     },
     {
-      name: "Physics Member",
+      name: "Abhinav Gupta",
       role: "Physics",
       initials: "PH",
       bio: "Applies modeling and optimization to complex technical problems.",
       linkedin: "#",
     },
     {
-      name: "Systems Eng Member",
-      role: "Systems Engineering",
-      initials: "SE",
+      name: "Hunar Pasricha",
+      role: "Physics",
+      initials: "PH",
       bio: "Architects reliable cloud, CI/CD, and observability foundations.",
       linkedin: "#",
     },
