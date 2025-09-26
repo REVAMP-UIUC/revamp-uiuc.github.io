@@ -1,5 +1,7 @@
 import Reveal from "@/components/site/Reveal";
 import TiltCard from "@/components/site/TiltCard";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Linkedin } from "lucide-react";
 
 export default function About() {
   const disciplines = [
@@ -71,6 +73,51 @@ export default function About() {
     },
   ];
 
+  const members = [
+    {
+      name: "Computer Science Member",
+      role: "Computer Science",
+      initials: "CS",
+      bio: "Builds agent frameworks, full‑stack, and tooling. Focus on product velocity.",
+      linkedin: "#",
+    },
+    {
+      name: "Statistics Member",
+      role: "Statistics",
+      initials: "ST",
+      bio: "Designs experiments and metrics; evaluates agent systems rigorously.",
+      linkedin: "#",
+    },
+    {
+      name: "Information Sciences Member",
+      role: "Information Sciences (Data Science)",
+      initials: "IS",
+      bio: "Leads retrieval and RAG pipelines; owns data quality and search.",
+      linkedin: "#",
+    },
+    {
+      name: "Finance DS Member",
+      role: "Finance (Data Science)",
+      initials: "FD",
+      bio: "Models ROI and risk; creates dashboards and decision support.",
+      linkedin: "#",
+    },
+    {
+      name: "Physics Member",
+      role: "Physics",
+      initials: "PH",
+      bio: "Applies modeling and optimization to complex technical problems.",
+      linkedin: "#",
+    },
+    {
+      name: "Systems Eng Member",
+      role: "Systems Engineering",
+      initials: "SE",
+      bio: "Architects reliable cloud, CI/CD, and observability foundations.",
+      linkedin: "#",
+    },
+  ];
+
   return (
     <div className="">
       {/* Intro */}
@@ -103,6 +150,45 @@ export default function About() {
                   </div>
                   <h3 className="text-lg font-semibold group-hover:text-primary">{m.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{m.desc}</p>
+                </TiltCard>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team members */}
+      <section className="py-8 md:py-12">
+        <div className="container">
+          <Reveal className="mb-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Team Members</h2>
+            <p className="mt-2 text-muted-foreground">Profiles for six members. Replace with your details anytime.</p>
+          </Reveal>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {members.map((p) => (
+              <Reveal key={p.role}>
+                <TiltCard className="group rounded-xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="flex items-center gap-3">
+                    <Avatar className="h-12 w-12">
+                      <AvatarImage src="" alt={p.name} />
+                      <AvatarFallback>{p.initials}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="font-semibold leading-none group-hover:text-primary">{p.name}</h3>
+                      <p className="text-sm text-muted-foreground">{p.role}</p>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground">{p.bio}</p>
+                  <div className="mt-4">
+                    <a
+                      href={p.linkedin}
+                      className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm hover:bg-accent"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Linkedin className="h-4 w-4" /> LinkedIn
+                    </a>
+                  </div>
                 </TiltCard>
               </Reveal>
             ))}
