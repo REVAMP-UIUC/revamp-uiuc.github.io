@@ -11,25 +11,18 @@ export default function Index() {
         <div className="absolute inset-0 -z-10 bg-grid opacity-40 mask-fade" />
         <div className="container py-20 md:py-28">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-              Revamp — Agentic AI & Tech Consulting
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-[hsl(19,100%,50%)] to-primary bg-clip-text text-transparent animate-gradient-x">
+              REVAMP
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              We help teams ship agentic AI and modern software—on time.
-              Strategy → prototypes → production, with measurable impact.
+              Agentic AI and tech consulting.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 to="/get-involved"
-                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-primary-foreground transition-all hover:scale-[1.03] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 Get Involved
-              </Link>
-              <Link
-                to="/projects"
-                className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                See Case Studies
               </Link>
             </div>
           </Reveal>
@@ -274,56 +267,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Case studies preview */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <Reveal className="mb-10 flex items-end justify-between">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-                Selected Work
-              </h2>
-              <p className="mt-2 text-muted-foreground max-w-prose">
-                Highlights from projects where we shipped measurable results.
-              </p>
-            </div>
-            <Link
-              to="/projects"
-              className="hidden md:inline text-sm hover:text-primary"
-            >
-              See all →
-            </Link>
-          </Reveal>
-          <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                title: "Support Agent that solves 40% of tickets",
-                desc: "Multi-tool agent with memory, search, and integrations.",
-                tag: "Agentic AI",
-              },
-              {
-                title: "Data pipeline cutting reporting time by 80%",
-                desc: "Automations across SaaS tools with robust monitoring.",
-                tag: "Automation",
-              },
-            ].map((c) => (
-              <Reveal key={c.title}>
-                <Link
-                  to="/projects"
-                  className="group rounded-xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
-                    {c.tag}
-                  </span>
-                  <h3 className="mt-3 text-lg font-semibold group-hover:text-primary">
-                    {c.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{c.desc}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="relative overflow-hidden">
