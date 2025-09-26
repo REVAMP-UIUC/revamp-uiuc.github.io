@@ -26,11 +26,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-primary" to="/projects">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
                 <Link className="hover:text-primary" to="/about">
                   About
                 </Link>
