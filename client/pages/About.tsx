@@ -134,28 +134,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team disciplines */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <Reveal className="mb-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Our Team</h2>
-            <p className="mt-2 text-muted-foreground">Six disciplines, one mission: ship useful AI with real impact.</p>
-          </Reveal>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {disciplines.map((m) => (
-              <Reveal key={m.title}>
-                <TiltCard className="group rounded-xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary">
-                    {m.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold group-hover:text-primary">{m.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{m.desc}</p>
-                </TiltCard>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Team members */}
       <section className="py-8 md:py-12">
@@ -167,19 +145,19 @@ export default function About() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {members.map((p) => (
               <Reveal key={p.role}>
-                <TiltCard className="group rounded-xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-                  <div className="flex items-center gap-3">
-                    <Avatar className="h-12 w-12">
+                <TiltCard className="group rounded-xl border bg-card p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <Avatar className="h-24 w-24 md:h-28 md:w-28 ring-2 ring-primary/30">
                       <AvatarImage src="" alt={p.name} />
-                      <AvatarFallback>{p.initials}</AvatarFallback>
+                      <AvatarFallback className="text-lg">{p.initials}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h3 className="font-semibold leading-none group-hover:text-primary">{p.name}</h3>
+                      <h3 className="text-xl font-semibold group-hover:text-primary">{p.name}</h3>
                       <p className="text-sm text-muted-foreground">{p.role}</p>
                     </div>
                   </div>
-                  <p className="mt-3 text-sm text-muted-foreground">{p.bio}</p>
-                  <div className="mt-4">
+                  <p className="mt-4 text-sm text-muted-foreground">{p.bio}</p>
+                  <div className="mt-5">
                     <a
                       href={p.linkedin}
                       className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm hover:bg-accent"
