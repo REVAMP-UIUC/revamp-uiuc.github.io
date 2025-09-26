@@ -55,10 +55,11 @@ export default function Footer() {
         </div>
         <div className="text-sm text-muted-foreground md:text-right flex items-end">
           <p className="w-full">
-            © {new Date().getFullYear()} Revamp. All rights reserved.
+            Copyright {new Date().getFullYear()} Revamp. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
   );
 }
+
