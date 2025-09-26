@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/70 ${scrolled ? "bg-white/90 shadow-sm" : "bg-white/70"}`}
+      className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/60 ${scrolled ? "bg-white/90 dark:bg-background/80 shadow-sm" : "bg-white/70 dark:bg-background/60"}`}
     >
       <div className="container flex h-16 items-center justify-between">
         <Link
