@@ -267,7 +267,6 @@ export default function Index() {
         </div>
       </section>
 
-
       {/* CTA */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/15 via-transparent to-[hsl(19,100%,50%)/15]" />
