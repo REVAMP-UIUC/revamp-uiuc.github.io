@@ -15,7 +15,7 @@ export default function Logo({ className }: { className?: string }) {
         width="36"
         height="36"
         rx="8"
-        className="fill-primary/10"
+        className="fill-primary/20"
       />
       <path
         d="M14 32L24 12l10 20"
@@ -24,7 +24,7 @@ export default function Logo({ className }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="24" cy="32" r="3" className="fill-[hsl(19,100%,50%)]" />
+      <circle cx="24" cy="32" r="3" className="fill-secondary" />
     </svg>
   );
 }

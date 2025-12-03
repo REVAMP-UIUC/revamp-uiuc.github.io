@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 
 const navItems = [
   { to: "/", label: "Home" },
+  { to: "/projects", label: "Projects" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/get-involved", label: "Get Involved" },
@@ -26,24 +27,26 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-background/60 ${scrolled ? "bg-white/90 dark:bg-background/80 shadow-sm" : "bg-white/70 dark:bg-background/60"}`}
+      className={`sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur-xl transition-all ${scrolled ? "bg-background/85 shadow-[0_8px_30px_rgba(0,0,0,0.35)]" : "bg-background/40"}`}
     >
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight"
+          className="flex items-center gap-2 text-lg font-bold tracking-tight uppercase"
         >
           <Logo className="h-6 w-6" />
-          <span className="sr-only">Revamp</span>
+          <span className="font-mono text-sm tracking-[0.6em] text-foreground/80">
+            REVAMP
+          </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden md:flex items-center gap-6 text-xs font-mono uppercase tracking-[0.25em]">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `relative pb-1 transition-colors hover:text-primary ${isActive ? "text-primary" : "text-foreground/80"} after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-[hsl(19,100%,50%)] after:transition-transform hover:after:scale-x-100`
+                `relative pb-1 transition-all hover:text-primary text-foreground/70 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100 ${isActive ? "after:scale-x-100 text-primary" : ""}`
               }
             >
               {item.label}
@@ -55,7 +58,7 @@ export default function Header() {
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input hover:bg-accent"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-card/40 text-foreground/80 transition hover:bg-card/80"
           >
             {theme === "dark" ? (
               <Sun className="h-4 w-4" />
@@ -63,7 +66,10 @@ export default function Header() {
               <Moon className="h-4 w-4" />
             )}
           </button>
-          <Button asChild className="bg-primary hover:bg-primary/90">
+          <Button
+            asChild
+            className="bg-primary text-primary-foreground font-mono tracking-[0.3em] uppercase hover:bg-primary/90"
+          >
             <Link to="/get-involved">Get Involved</Link>
           </Button>
         </div>
@@ -79,7 +85,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-border/60 bg-background">
+        <div className="md:hidden border-t border-border/40 bg-background">
           <div className="container py-4 space-y-2">
             {navItems.map((item) => (
               <NavLink
@@ -87,7 +93,7 @@ export default function Header() {
                 to={item.to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `block rounded-md px-3 py-2 text-base transition-colors hover:bg-accent hover:text-accent-foreground ${isActive ? "text-primary" : "text-foreground/90"}`
+                  `block rounded-md px-3 py-2 text-sm font-mono uppercase tracking-[0.25em] transition-colors hover:bg-accent hover:text-accent-foreground ${isActive ? "text-primary" : "text-foreground/90"}`
                 }
               >
                 {item.label}

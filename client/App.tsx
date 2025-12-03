@@ -12,6 +12,7 @@ import Layout from "@/components/site/Layout";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import GetInvolved from "@/pages/GetInvolved";
+import Projects from "@/pages/Projects";
 import { ThemeProvider } from "next-themes";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
               <Route path="about" element={<About />} />
+              <Route path="projects" element={<Projects />} />
               <Route path="services" element={<Services />} />
               <Route path="get-involved" element={<GetInvolved />} />
             </Route>
