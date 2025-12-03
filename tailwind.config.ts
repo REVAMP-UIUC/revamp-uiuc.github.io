@@ -87,6 +87,7 @@ export default {
       },
       fontFamily: {
         sans: [
+          "Space Grotesk",
           "Montserrat",
           "ui-sans-serif",
           "system-ui",
@@ -96,6 +97,17 @@ export default {
           "Arial",
           "Noto Sans",
           "sans-serif",
+        ],
+        mono: [
+          "IBM Plex Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "Liberation Mono",
+          "Courier New",
+          "monospace",
         ],
       },
     },
