@@ -22,8 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Revamp UIUC | Agentic AI Consulting",
-  description: "Premier student organization for Agentic AI development and consulting.",
+  title: "Revamp UIUC",
 };
 
 export default function RootLayout({
