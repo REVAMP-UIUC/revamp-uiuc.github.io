@@ -24,10 +24,7 @@ export default function JoinPage() {
                         </p>
                         <div className="flex justify-center gap-4">
                             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/80 text-lg px-8 py-6 h-auto" asChild>
-                                <Link href="https://forms.google.com/your-interest-form-link">Interest Form</Link>
-                            </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/20">
-                                View Roles
+                                <Link href="https://forms.gle/giA8kNWZ2hiuf8Hy5">Interest Form</Link>
                             </Button>
                         </div>
                     </div>
@@ -83,15 +80,15 @@ export default function JoinPage() {
                     <h3 className="text-2xl font-bold mb-6">Recruitment Timeline</h3>
                     <div className="space-y-4">
                         <div className="flex gap-4">
-                            <div className="w-24 font-mono text-cyan-400">Aug 26</div>
+                            <div className="w-24 font-mono text-cyan-400">TBD</div>
                             <div>Applications Open</div>
                         </div>
                         <div className="flex gap-4">
-                            <div className="w-24 font-mono text-cyan-400">Sep 10</div>
+                            <div className="w-24 font-mono text-cyan-400">TBD</div>
                             <div>Info Session @ Siebel</div>
                         </div>
                         <div className="flex gap-4">
-                            <div className="w-24 font-mono text-cyan-400">Sep 15</div>
+                            <div className="w-24 font-mono text-cyan-400">TBD</div>
                             <div>Applications Close</div>
                         </div>
                     </div>

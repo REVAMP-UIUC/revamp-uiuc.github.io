@@ -1,8 +1,18 @@
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ContactModal } from "@/components/contact/contact-modal";
 
 export default function ContactPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState("General");
+
+    const openModal = (category: string) => {
+        setSelectedCategory(category);
+        setIsModalOpen(true);
+    };
+
     return (
         <div className="relative min-h-screen w-full flex flex-col bg-background text-foreground overflow-hidden">
             {/* Background Elements */}
@@ -34,31 +44,35 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mt-8 fade-in-up delay-300">
                         {/* Contact Card 1: Email */}
                         <div className="group relative p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 flex flex-col items-center gap-4 text-center">
-                            <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                                 <span className="material-symbols-outlined text-2xl">mail</span>
                             </div>
                             <h3 className="text-xl font-bold font-display">General Inquiries</h3>
                             <p className="text-sm text-muted-foreground">
                                 For general questions, student recruitment, or potential collaborations.
                             </p>
-                            <a href="mailto:contact@revampuiuc.org" className="text-primary hover:underline font-mono text-sm mt-2">
-                                contact@revampuiuc.org
-                            </a>
+                            <Button
+                                onClick={() => openModal("General Inquiry")}
+                                className="mt-2 bg-primary hover:bg-primary/90 cursor-pointer"
+                            >
+                                Open Contact Form
+                            </Button>
                         </div>
 
                         {/* Contact Card 2: Partnerships */}
                         <div className="group relative p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 flex flex-col items-center gap-4 text-center">
-                            <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                                 <span className="material-symbols-outlined text-2xl">handshake</span>
                             </div>
                             <h3 className="text-xl font-bold font-display">Corporate Partnerships</h3>
                             <p className="text-sm text-muted-foreground">
                                 Discuss project proposals, sponsorship opportunities, or technical consulting.
                             </p>
-                            <Button asChild className="mt-2 bg-primary hover:bg-primary/90">
-                                <a href="mailto:partnerships@revampuiuc.org?subject=Partnership Inquiry">
-                                    Initiate Partnership
-                                </a>
+                            <Button
+                                onClick={() => openModal("Corporate Partnership")}
+                                className="mt-2 bg-primary hover:bg-primary/90 cursor-pointer"
+                            >
+                                Initiate Partnership
                             </Button>
                         </div>
                     </div>
@@ -76,6 +90,13 @@ export default function ContactPage() {
                             <br />This allows our project managers to assess feasibility and assign the appropriate agentic workflow team.
                         </p>
                     </div>
+
+                    <ContactModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        title={selectedCategory === "General Inquiry" ? "Contact Us" : "Partner with Us"}
+                        category={selectedCategory}
+                    />
 
                 </div>
             </main>

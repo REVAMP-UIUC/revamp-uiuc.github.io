@@ -43,9 +43,9 @@ const TEAM_DATA: TeamMember[] = [
         tags: ["Project Manager"],
         category: "pm",
         description: "> Brings experience in product lifecycle and systems engineering.\n> Interests in quantum computing, design optimization, and AI product strategy.",
-        email: "#",
-        github: "#",
-        linkedin: "#",
+        email: "mailto:ditichhaproo@gmail.com",
+        github: "github.com/diti-chhaproo",
+        linkedin: "linkedin.com/in/ditichhaproo",
         hoverName: "Diti Chhaproo",
         hoverRole: "Project Manager"
     },
