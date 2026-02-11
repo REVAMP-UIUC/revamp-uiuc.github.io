@@ -11,20 +11,25 @@ export default function JoinPage() {
 
                 {/* Header */}
                 <div className="text-center space-y-6">
-                    <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-4 py-1">Fall 2026 Recruitment</Badge>
+                    <Badge className="bg-destructive/10 text-destructive border-destructive/20 border px-4 py-1">Fall 2026 Application Closed</Badge>
                     <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
                         Build the <span className="text-primary">Impossible</span>
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                         Join the most technical AI club at UIUC. We don't just talk about potential—we deploy production-grade agents for real clients.
                     </p>
-                    <div className="flex justify-center gap-4">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 h-auto">
-                            Apply Now
-                        </Button>
-                        <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/20">
-                            View Roles
-                        </Button>
+                    <div className="flex flex-col items-center gap-4">
+                        <p className="text-lg font-medium text-foreground">
+                            Fill out the interest form for Spring 2026
+                        </p>
+                        <div className="flex justify-center gap-4">
+                            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/80 text-lg px-8 py-6 h-auto" asChild>
+                                <Link href="https://forms.google.com/your-interest-form-link">Interest Form</Link>
+                            </Button>
+                            <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/20">
+                                View Roles
+                            </Button>
+                        </div>
                     </div>
                 </div>
 
