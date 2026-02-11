@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/contact/contact-modal";
+import { Loader2 } from "lucide-react";
 
-export default function ContactPage() {
+function ContactContent() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("General");
     const searchParams = useSearchParams();
@@ -117,5 +118,17 @@ export default function ContactPage() {
                 </div>
             </main>
         </div>
+    );
+}
+
+export default function ContactPage() {
+    return (
+        <Suspense fallback={
+            <div className="flex h-screen w-full items-center justify-center bg-background">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+        }>
+            <ContactContent />
+        </Suspense>
     );
 }
