@@ -6,16 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 // ---------------------------------------------------------
-// ❗ IMPORTANT: REPLACE THESE WITH YOUR EMAILJS VALUES
-// 1. Sign up at https://www.emailjs.com/
-// 2. Add an Email Service (e.g., Gmail) -> Service ID
-// 3. Create an Email Template -> Template ID
-//    - Template variables: {{user_name}}, {{user_email}}, {{company_name}}, {{message}}
-// 4. Get your Public Key from Account -> API Keys -> Public Key
 // ---------------------------------------------------------
-const SERVICE_ID = "service_uo65zif"; // e.g., "service_xxxxx"
-const TEMPLATE_ID = "template_ahcvagv";
-const PUBLIC_KEY = "I_oKg-j0GH1ftl67e";   // e.g., "user_xxxxx"
+const SERVICE_ID = "";
+const TEMPLATE_ID = "";
+const PUBLIC_KEY = "";
 
 export function ContactForm({ category }: { category?: string }) {
     const form = useRef<HTMLFormElement>(null);
