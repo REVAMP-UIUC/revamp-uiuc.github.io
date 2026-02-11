@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export function CTASection() {
     return (
@@ -35,12 +36,16 @@ export function CTASection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                        <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-shadow">
-                            Start a Project
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-border hover:bg-secondary backdrop-blur-sm">
-                            <Mail className="mr-2 h-5 w-5" /> Contact Us
-                        </Button>
+                        <Link href="/contact?intent=project">
+                            <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-shadow">
+                                Start a Project
+                            </Button>
+                        </Link>
+                        <Link href="/contact">
+                            <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-border hover:bg-secondary backdrop-blur-sm">
+                                <Mail className="mr-2 h-5 w-5" /> Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </motion.div>
             </div>

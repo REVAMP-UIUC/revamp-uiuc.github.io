@@ -1,12 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/contact/contact-modal";
 
 export default function ContactPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("General");
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const intent = searchParams.get("intent");
+        if (intent === "project") {
+            setSelectedCategory("Project Start");
+            setIsModalOpen(true);
+        }
+    }, [searchParams]);
 
     const openModal = (category: string) => {
         setSelectedCategory(category);
@@ -94,7 +104,13 @@ export default function ContactPage() {
                     <ContactModal
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
-                        title={selectedCategory === "General Inquiry" ? "Contact Us" : "Partner with Us"}
+                        title={
+                            selectedCategory === "General Inquiry"
+                                ? "Contact Us"
+                                : selectedCategory === "Project Start"
+                                    ? "Start a Project"
+                                    : "Partner with Us"
+                        }
                         category={selectedCategory}
                     />
 
