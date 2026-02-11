@@ -85,9 +85,9 @@ const TEAM_DATA: TeamMember[] = [
         tags: ["Scrum Lead"],
         category: "scrum",
         description: "> Focused on DS/AI applications including XGBoost models and FastAPI–OpenAI systems.\n> Interested in quant finance, economics, and sports analytics.",
-        email: "#",
+        email: "mailto:nakuljindal27@gmail.com",
         github: "#",
-        linkedin: "#",
+        linkedin: "http://www.linkedin.com/in/nakul-jindal-817279332",
         hoverName: "Nakul Jindal",
         hoverRole: "Scrum Lead"
     },

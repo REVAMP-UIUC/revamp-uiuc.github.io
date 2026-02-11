@@ -11,17 +11,20 @@ export function Navbar() {
                 <Link href="/" className="flex items-center space-x-2">
                     <div className="relative h-8 w-8">
                         <Image
-                            src="/logo.png"
+                            src="/logo.svg"
                             alt="Revamp UIUC Logo"
                             fill
-                            className="object-contain"
+                            className="object-contain dark:invert"
                         />
                     </div>
-                    <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                    <span className="font-bold text-xl tracking-tight text-foreground">
                         Revamp UIUC
                     </span>
                 </Link>
                 <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
+                        Projects
+                    </Link>
                     <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                         About
                     </Link>
