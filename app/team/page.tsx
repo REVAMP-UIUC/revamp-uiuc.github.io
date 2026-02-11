@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Github, Linkedin, AtSign } from "lucide-react";
 
 type TeamMember = {
     id: string;
@@ -12,6 +13,7 @@ type TeamMember = {
     tags: string[];
     description: string;
     github?: string;
+    linkedin?: string;
     email?: string;
     hoverName: string; // The name that appears on hover (glitch effect)
     hoverRole: string; // The role that appears on hover
@@ -21,13 +23,14 @@ type TeamMember = {
 const TEAM_DATA: TeamMember[] = [
     {
         id: "raaghav",
-        name: "Dr. Elena Vance",
-        role: "Chief Scientist",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAq7X-N9HbrJTAUd-w98uZRrmFD_VliTx_Hx9UBVyRSL1LTL94gk7cO6SdSnAW99QkOCL--txSQ0-YO4JK7CsHd4MUhmdyQ_sXJ_nvv3363fjQ8yhd9mDuRSQ4om15vsaVUY9YwnBQjjmTWVdwAxDqOCN1lgGQ7yLlECnX6cU_bHRBYIJA2Uq0dKMINQDwmZ1OY2PQvFHPhZ1mBe6Joaqf43Kq7mezwTQt8CQz_aAehKGM33RBkGg4He2G9tUjtjc2uX1pwipQ-9ls",
-        tags: ["Project Manager", "LLM Ops"],
+        name: "Raaghav Pillai",
+        role: "Project Manager",
+        image: "/team/raaghav.jpg",
+        tags: ["Project Manager"],
         category: "pm",
-        description: "> Leading architectural decisions for autonomous deployments.\n> System efficiency: 99.8%",
+        description: "> Works across YOLO, LangChain, and vector databases. \n> Passionate about SWE, product thinking, and photography",
         github: "https://github.com/Raaghav-Pillai",
+        linkedin: "https://www.linkedin.com/in/raaghavpillai/",
         email: "mailto:raaghavpillai@gmail.com",
         hoverName: "Raaghav Pillai",
         hoverRole: "Project Manager"
@@ -35,98 +38,74 @@ const TEAM_DATA: TeamMember[] = [
     {
         id: "diti",
         name: "Diti Chhaproo",
-        role: "Lead Engineer",
-        image: "/team/member-2.jpg",
-        tags: ["Neural Nets", "Vision"],
-        category: "scrum",
-        description: "> Specialist in computer vision pipelines.\n> Optimizing inference latency.",
+        role: "Project Manager",
+        image: "/team/diti.png",
+        tags: ["Project Manager"],
+        category: "pm",
+        description: "> Brings experience in product lifecycle and systems engineering.\n> Interests in quantum computing, design optimization, and AI product strategy.",
         email: "#",
         github: "#",
+        linkedin: "#",
         hoverName: "Diti Chhaproo",
-        hoverRole: "Lead Engineer"
+        hoverRole: "Project Manager"
     },
     {
         id: "swarnika",
-        name: "Swarnika",
-        role: "Robotics Integration",
-        image: "/team/member-1.jpg",
-        tags: ["Robotics", "Control"],
-        category: "swe",
-        description: "> Integrating heavy machinery with light-weight agents.\n> Safety protocols initialized.",
+        name: "Swarnika Bhardwaj",
+        role: "Project Manager",
+        image: "/team/swarnika.jpg",
+        tags: ["Project Manager"],
+        category: "pm",
+        description: "> Skilled in LLMs, Django, and ML-driven acoustic modeling.\n> Passionate about Agentic AI, product engineering, PM, economics, and music-tech.",
         email: "#",
         github: "#",
-        hoverName: "Swarnika",
-        hoverRole: "Robotics Integration"
+        linkedin: "#",
+        hoverName: "Swarnika Bhardwaj",
+        hoverRole: "Project Manager"
     },
     {
-        id: "david",
-        name: "David Kim",
-        role: "Data Systems Lead",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCU9q1eEoCo0uuKA1kFPixkHCJaE-jEmUpe2LjkrbI_x90xOomZJ9d9fmz1ba2_EhXiIJPxanwgdVUQAR391_AtY6WxlMuXrQ7vN_dmgMs2aqWWvisY6HMbNQFpsaf8Jbrn9hPphYLiOdk83zr1NLk8GG8lx5_jh3TN1A5uVpcbNHgX7pLQlM_cgfW8_Lkvr3YARk87nFIk_3NbtiFoLibW_J73iX9RacvaBwA4g2lcP51wIR0SpfQupe5JTtMmqPDIEpaizGZmtlQ",
-        tags: ["RAG", "Vector DB"],
-        category: "swe",
-        description: "> Building enterprise knowledge bases.\n> Context window optimization expert.",
+        id: "abhinav",
+        name: "Abhinav Gupta",
+        role: "Scrum Lead",
+        image: "/team/abhinav.jpg",
+        tags: ["Scrum Lead"],
+        category: "scrum",
+        description: "> Experienced in Python, C++, Java, backend development, APIs, and PostgreSQL.\n> Background in theoretical physics and a strong interest in theoretical CS and ML research.",
         email: "#",
         github: "#",
-        hoverName: "David Kim",
-        hoverRole: "Data Systems Lead"
+        linkedin: "#",
+        hoverName: "Abhinav Gupta",
+        hoverRole: "Scrum Lead"
     },
     {
-        id: "priya",
-        name: "Priya Patel",
-        role: "Senior AI Researcher",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD19O9ZydTdZXeIPNP9wzgS_3svxSG6BLB8dplQCmIyMkJ7fY076dZn7UqIEDF_-u-5nMhARzBpJ8m2Yn0kd4ipQZBGKvaMBruKagC5WwDrvhf8vO8yoiCNs-Yvz1SZz8ZMo6QNqF-fsGsVfO2QXrtcJpblOmz90MVVmZ73NOdrtud2DdZYPxUT5hqyO9V9NSSXVcYyhRjHVBrkF9FEQSWCwYkjbLk-qtNKCw7IRI1hI7UVQ9AhBtR8RIudToNVz00yUPyYPFl5oyk",
-        tags: ["Agent Swarms", "Multi-Agent"],
-        category: "swe",
-        description: "> Orchestrating 100+ agent environments.\n> Emergent behavior analysis.",
+        id: "nakul",
+        name: "Nakul Jindal",
+        role: "Scrum Lead",
+        image: "/team/nakul.jpg",
+        tags: ["Scrum Lead"],
+        category: "scrum",
+        description: "> Focused on DS/AI applications including XGBoost models and FastAPI–OpenAI systems.\n> Interested in quant finance, economics, and sports analytics.",
         email: "#",
         github: "#",
-        hoverName: "Priya Patel",
-        hoverRole: "Senior AI Researcher"
+        linkedin: "#",
+        hoverName: "Nakul Jindal",
+        hoverRole: "Scrum Lead"
     },
     {
-        id: "james",
-        name: "James Wilson",
-        role: "Platform Architect",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAGWYVm4xu_vx9oC2rxHFOfWj0ClU2zOzrkfQF_lQmi0aZif_eSUZTxjOUZhciD5i-hdWOnB6BClxKHGYVm_c-XIyAJvAHl4iL2ku_TxzQLKelWaepYxGY3kLplWHHtSTjAlMmoF0fYJTTnV5Vxp0lyI_J2jD-lAbOQF_ndKgm1moM1K0BCP588OnTpZHLmytB9fxxY59400-w0igMm6vbRr_RWsRt491bfzqB5NOCAnwB31ETATZgiPDMkMWtdUOt3m2eFIE_1CYE",
-        tags: ["Backend", "Infrastructure"],
-        category: "swe",
-        description: "> Scaling Kubernetes clusters for training.\n> 99.99% uptime maintenance.",
+        id: "hunar",
+        name: "Hunar Pasricha",
+        role: "Scrum Lead",
+        image: "/team/hunar.jpg",
+        tags: ["Scrum Lead"],
+        category: "scrum",
+        description: "> Experienced with YOLO, OpenCV, TensorFlow/PyTorch, and PostgreSQL.\n> Interested in deep learning, model experimentation, and soccer.",
         email: "#",
         github: "#",
-        hoverName: "James Wilson",
-        hoverRole: "Platform Architect"
-    },
-    {
-        id: "robert",
-        name: "Dr. Robert Alquist",
-        role: "AI Ethics Lead",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCheSkM_AlvEHb9tGlxGvHEJkxaSCrnI0C-B-NT_HMSdwGV7bAfJU0sMzXVZgEhDy2t87HJtKbanV1yvptAGB0XrCJ7Vr_3s9WiwQxFYyuGAoYgL7aLICSHHtaCgUkFnsb2PWzr1ph64vvBJkEgD-bSVQvmFaS4-7TxI6kD6_w6b94sFXson5kLk_oDQ96r1fz5Ftra5M_0vkqHoDqA4jZ1bVbhan5jMNRwpIUxGy33MAOlRINwWbaQNFrNoAKz_VkZ36lWur2wxpk",
-        tags: ["Ethics", "Policy"],
-        category: "pm", // Assigned to PM for lack of better fit in "SWE/Scrum" unless "Policy" is separate
-        description: "> Ensuring alignment in autonomous systems.\n> Bias mitigation strategies.",
-        email: "#",
-        github: "#",
-        hoverName: "Dr. Robert Alquist",
-        hoverRole: "AI Ethics Lead"
-    },
-    {
-        id: "nina",
-        name: "Nina Gomez",
-        role: "Product Designer",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkY4PINy-_uG8uOqGnPv7HTCyfZvxjooQStThUPxMKzTdVjR1aFlHMnFoVPMOwSGAxEbG5fSMDSxzvkdPnLkh6oqqU_vEN3kvnnyQQDRsXQQlhVQWEpVkYXZW5myEs43b60bwWmhZQO7EWTaQbSC71pqItCxOe8ndB_B6bjfL8hNFxvF7OiRCiKzxsRpMzJZ1pl0x2MpA8FUbxqz6sSOdoZPFuzpEIF6kjnjV77Sh0oB8rC1lcAhzuLHzqKf_NZapDytQ_TMrHVsk",
-        tags: ["Frontend", "UX/UI"],
-        category: "swe", // Designer is technically distinct but closest to SWE in this simplistic filter
-        description: "> Human-Agent interaction design.\n> Visualizing complex agent thoughts.",
-        email: "#",
-        github: "#",
-        hoverName: "Nina Gomez",
-        hoverRole: "Product Designer"
+        linkedin: "#",
+        hoverName: "Hunar Pasricha",
+        hoverRole: "Scrum Lead"
     }
 ];
-
-// Helper to make "Project Manager" text in Raaghav's card actually match "Project Managers" filter
-// We will assign a 'category' property to each member to map to the buttons.
 
 export default function TeamPage() {
     const [filter, setFilter] = useState<"all" | "pm" | "scrum" | "swe">("all");
@@ -235,18 +214,24 @@ export default function TeamPage() {
                                                     className="text-white hover:text-cyan-300 transition-colors"
                                                     href={member.github}
                                                 >
-                                                    <span className="material-symbols-outlined text-lg">
-                                                        code
-                                                    </span>
+                                                    <Github className="w-5 h-5" />
                                                 </a>
                                                 <a
                                                     className="text-white hover:text-cyan-300 transition-colors"
                                                     href={member.email}
                                                 >
-                                                    <span className="material-symbols-outlined text-lg">
-                                                        alternate_email
-                                                    </span>
+                                                    <AtSign className="w-5 h-5" />
                                                 </a>
+                                                {member.linkedin && (
+                                                    <a
+                                                        className="text-white hover:text-cyan-300 transition-colors"
+                                                        href={member.linkedin}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        <Linkedin className="w-5 h-5" />
+                                                    </a>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
