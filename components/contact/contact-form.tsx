@@ -14,7 +14,7 @@ import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 // 4. Get your Public Key from Account -> API Keys -> Public Key
 // ---------------------------------------------------------
 const SERVICE_ID = "service_uo65zif"; // e.g., "service_xxxxx"
-const TEMPLATE_ID = "I_oKg-j0GH1ftl67e"; // e.g., "template_xxxxx"
+const TEMPLATE_ID = "template_ahcvagv";
 const PUBLIC_KEY = "I_oKg-j0GH1ftl67e";   // e.g., "user_xxxxx"
 
 export function ContactForm({ category }: { category?: string }) {
