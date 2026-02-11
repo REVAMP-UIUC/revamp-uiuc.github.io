@@ -13,9 +13,9 @@ import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 //    - Template variables: {{user_name}}, {{user_email}}, {{company_name}}, {{message}}
 // 4. Get your Public Key from Account -> API Keys -> Public Key
 // ---------------------------------------------------------
-const SERVICE_ID = "YOUR_SERVICE_ID"; // e.g., "service_xxxxx"
-const TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // e.g., "template_xxxxx"
-const PUBLIC_KEY = "YOUR_PUBLIC_KEY";   // e.g., "user_xxxxx"
+const SERVICE_ID = "service_uo65zif"; // e.g., "service_xxxxx"
+const TEMPLATE_ID = "I_oKg-j0GH1ftl67e"; // e.g., "template_xxxxx"
+const PUBLIC_KEY = "I_oKg-j0GH1ftl67e";   // e.g., "user_xxxxx"
 
 export function ContactForm({ category }: { category?: string }) {
     const form = useRef<HTMLFormElement>(null);
