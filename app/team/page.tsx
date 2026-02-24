@@ -64,20 +64,6 @@ const TEAM_DATA: TeamMember[] = [
         hoverRole: "Project Manager"
     },
     {
-        id: "abhinav",
-        name: "Abhinav Gupta",
-        role: "Scrum Lead",
-        image: "/team/abhinav.jpg",
-        tags: ["Scrum Lead"],
-        category: "scrum",
-        description: "> Experienced in Python, C++, Java, backend development, APIs, and PostgreSQL.\n> Background in theoretical physics and a strong interest in theoretical CS and ML research.",
-        email: "#",
-        github: "#",
-        linkedin: "#",
-        hoverName: "Abhinav Gupta",
-        hoverRole: "Scrum Lead"
-    },
-    {
         id: "nakul",
         name: "Nakul Jindal",
         role: "Scrum Lead",
