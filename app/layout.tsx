@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Revamp UIUC",
   description: "Premier student organization for Agentic AI development and consulting.",
   icons: {
-    icon: { url: "./public/logo.svg", type: "image/svg+xml" },
+    icon: { url: "/logo.svg", type: "image/svg+xml" },
   },
 };
 
