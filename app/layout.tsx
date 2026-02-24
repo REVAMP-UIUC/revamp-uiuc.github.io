@@ -23,6 +23,10 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Revamp UIUC",
+  description: "Premier student organization for Agentic AI development and consulting.",
+  icons: {
+    icon: { url: "./team/logo.svg", type: "image/svg+xml" },
+  },
 };
 
 export default function RootLayout({
