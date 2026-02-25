@@ -304,10 +304,10 @@ export default function TeamPage() {
                                     Projects Delivered
                                 </p>
                                 <p className="text-white tracking-light text-4xl font-bold leading-tight group-hover:text-primary transition-colors">
-                                    50+
+                                    5+
                                 </p>
                             </div>
-                            <div className="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-8 border border-[#313168] bg-[#16162c] hover:border-primary/50 transition-colors group">
+                            {/* <div className="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-8 border border-[#313168] bg-[#16162c] hover:border-primary/50 transition-colors group">
                                 <div className="mb-2 size-10 rounded bg-primary/20 flex items-center justify-center text-primary">
                                     <span className="material-symbols-outlined">
                                         library_books
@@ -319,7 +319,7 @@ export default function TeamPage() {
                                 <p className="text-white tracking-light text-4xl font-bold leading-tight group-hover:text-primary transition-colors">
                                     24
                                 </p>
-                            </div>
+                            </div> */}
                             <div className="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-8 border border-[#313168] bg-[#16162c] hover:border-primary/50 transition-colors group">
                                 <div className="mb-2 size-10 rounded bg-primary/20 flex items-center justify-center text-primary">
                                     <span className="material-symbols-outlined">smart_toy</span>
@@ -328,7 +328,7 @@ export default function TeamPage() {
                                     Custom Agents Deployed
                                 </p>
                                 <p className="text-white tracking-light text-4xl font-bold leading-tight group-hover:text-primary transition-colors">
-                                    100+
+                                    10+
                                 </p>
                             </div>
                             <div className="flex min-w-[240px] flex-1 flex-col gap-2 rounded-xl p-8 border border-[#313168] bg-[#16162c] hover:border-primary/50 transition-colors group">
