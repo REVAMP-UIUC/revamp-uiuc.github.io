@@ -90,6 +90,48 @@ const TEAM_DATA: TeamMember[] = [
         linkedin: "#",
         hoverName: "Hunar Pasricha",
         hoverRole: "Scrum Lead"
+    },
+    {
+        id: "janine",
+        name: "Janine Leong",
+        role: "Scrum Lead",
+        image: "/team/janine.jpeg",
+        tags: ["Software Engineer"],
+        category: "swe",
+        description: "",
+        email: "#",
+        github: "#",
+        linkedin: "#",
+        hoverName: "Janine Leong",
+        hoverRole: "Software Engineer"
+    },
+    {
+        id: "shubham",
+        name: "Shubh Jain",
+        role: "Scrum Lead",
+        image: "/team/shubh.jpeg",
+        tags: ["Software Engineer"],
+        category: "swe",
+        description: "",
+        email: "#",
+        github: "#",
+        linkedin: "#",
+        hoverName: "Shubh Jain",
+        hoverRole: "Software Engineer"
+    },
+    {
+        id: "sonika",
+        name: "Sonika",
+        role: "Software Engineer",
+        image: "/team/sonika.jpeg",
+        tags: ["Software Engineer"],
+        category: "swe",
+        description: "",
+        email: "#",
+        github: "#",
+        linkedin: "#",
+        hoverName: "Sonika",
+        hoverRole: "Software Engineer"
     }
 ];
 
