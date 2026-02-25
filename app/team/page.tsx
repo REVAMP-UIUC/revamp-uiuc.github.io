@@ -121,7 +121,7 @@ const TEAM_DATA: TeamMember[] = [
     },
     {
         id: "sonika",
-        name: "Sonika",
+        name: "Sonika Potnis",
         role: "Software Engineer",
         image: "/team/sonika.png",
         tags: ["Software Engineer"],
