@@ -160,6 +160,20 @@ const TEAM_DATA: TeamMember[] = [
         linkedin: "#",
         hoverName: "Rini Khandelwal",
         hoverRole: "Software Engineer"
+    },
+    {
+        id: "nalin",
+        name: "Nalin Gupta",
+        role: "Software Engineer",
+        image: "/team/nalin.png",
+        tags: ["Software Engineer"],
+        category: "swe",
+        description: "",
+        email: "#",
+        github: "#",
+        linkedin: "#",
+        hoverName: "Nalin Gupta",
+        hoverRole: "Software Engineer"
     }
 ];
 
