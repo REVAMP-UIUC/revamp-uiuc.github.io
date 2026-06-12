@@ -1,14 +1,22 @@
 import { HeroSection } from "@/components/sections/hero";
-import { FeaturesSection } from "@/components/sections/features";
-import { ProjectsSection } from "@/components/sections/projects";
+import { MarqueeSection } from "@/components/sections/marquee";
+import { ManifestoSection } from "@/components/sections/manifesto";
+import { ServicesSection } from "@/components/sections/services";
+import { ProcessSection } from "@/components/sections/process";
+import { StatsSection } from "@/components/sections/stats";
+import { WorkSection } from "@/components/sections/work";
 import { CTASection } from "@/components/sections/cta";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div>
       <HeroSection />
-      <FeaturesSection />
-      <ProjectsSection />
+      <MarqueeSection />
+      <ManifestoSection />
+      <ServicesSection />
+      <ProcessSection />
+      <StatsSection />
+      <WorkSection />
       <CTASection />
     </div>
   );

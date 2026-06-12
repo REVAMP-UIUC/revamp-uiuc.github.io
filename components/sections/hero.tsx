@@ -1,83 +1,124 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
-import { NetworkBackground } from "@/components/ui/network-background";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { LiveLog } from "@/components/ui/live-log";
+import dynamic from "next/dynamic";
+import { gsap, useGSAP } from "@/lib/gsap";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
+
+const HeroCanvas = dynamic(
+  () => import("@/components/three/hero-canvas").then((m) => m.HeroCanvas),
+  { ssr: false }
+);
 
 export function HeroSection() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end start"]
-    });
+  const scope = useRef<HTMLElement>(null);
 
-    // Animations based on scroll progress (0 to 1)
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 10]); // Big zoom into the net
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]); // Text fades out halfway
-    const textScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.5]); // Text grows slightly before disappearing
-    const overlayOpacity = useTransform(scrollYProgress, [0, 0.8], [0.6, 0]); // Dark overlay fades to let the "net" shine
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    return (
-        <section ref={containerRef} className="relative h-[300vh]"> {/* Tall container for scroll space */}
-            <div className="sticky top-0 h-screen w-full overflow-hidden bg-background">
+      tl.from("[data-hero-line]", {
+        yPercent: 115,
+        duration: 1.3,
+        stagger: 0.12,
+        delay: 0.15,
+      })
+        .from(
+          "[data-hero-fade]",
+          { autoAlpha: 0, y: 24, duration: 1, stagger: 0.12 },
+          "-=0.7"
+        )
+        .from(
+          "[data-hero-rule]",
+          { scaleX: 0, transformOrigin: "left center", duration: 1.2, ease: "power3.inOut" },
+          "-=0.9"
+        );
 
-                {/* Background Layer: Network Mesh */}
-                <motion.div style={{ scale }} className="absolute inset-0 z-0 origin-center">
-                    <div className="relative w-full h-full">
-                        <NetworkBackground className="w-full h-full object-cover" />
-                        {/* Vignette & Color Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/80 pointer-events-none" />
-                        <motion.div style={{ opacity: overlayOpacity }} className="absolute inset-0 bg-background/60 pointer-events-none" />
-                    </div>
-                </motion.div>
+      // Content gently recedes as you scroll away
+      gsap.to("[data-hero-content]", {
+        yPercent: -12,
+        autoAlpha: 0.25,
+        ease: "none",
+        scrollTrigger: {
+          trigger: scope.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    },
+    { scope }
+  );
 
-                {/* Content Layer */}
-                <motion.div
-                    style={{ opacity, scale: textScale }}
-                    className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4"
-                >
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="space-y-8 max-w-4xl"
-                    >
-                        {/* Apple-style typography: Heavy, clean, concise */}
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-foreground">
-                            Revamp <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">UIUC</span>
-                        </h1>
+  return (
+    <section ref={scope} className="relative flex min-h-svh flex-col overflow-hidden">
+      {/* Three.js particle field */}
+      <HeroCanvas className="absolute inset-0 z-0" />
+      {/* Legibility gradients */}
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/70 via-transparent to-background" />
 
-                        <p className="text-xl md:text-3xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
-                            Connecting the dots between today's innovations and tomorrow's giants.
-                        </p>
-                    </motion.div>
+      <div
+        data-hero-content
+        className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-grow flex-col justify-end px-5 pb-14 pt-40 md:px-10 md:pb-20"
+      >
+        <p data-hero-fade className="eyebrow mb-8 flex items-center gap-3 text-lime">
+          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime" />
+          Agentic AI Consulting
+        </p>
 
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                    >
-                        <span className="text-xs uppercase tracking-[0.2em] text-zinc-500">Scroll to Dive In</span>
-                        <ChevronDown className="h-6 w-6 text-zinc-500 animate-bounce" />
-                    </motion.div>
+        <h1 className="headline text-[13.5vw] text-foreground sm:text-[11vw] lg:text-[8.6rem] xl:text-[9.5rem]">
+          <span className="mask-line">
+            <span data-hero-line>Autonomous AI,</span>
+          </span>
+          <span className="mask-line">
+            <span data-hero-line>
+              built for the <span className="text-stroke">non-</span>
+            </span>
+          </span>
+          <span className="mask-line">
+            <span data-hero-line>
+              <span className="text-stroke">technical</span> world.
+            </span>
+          </span>
+        </h1>
 
-                    {/* Live Activity Log - Desktop Only */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.5, duration: 1 }}
-                        className="absolute bottom-12 left-12 z-20 hidden xl:block"
-                    >
-                        <LiveLog />
-                    </motion.div>
-                </motion.div>
-            </div>
-        </section>
-    );
+        <div data-hero-rule className="my-10 h-px w-full bg-white/10 md:my-12" />
+
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          <p data-hero-fade className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+            We design, build, and run agentic frameworks for companies that don&apos;t
+            write code — turning your everyday operations into an autonomous workforce.
+          </p>
+
+          <div data-hero-fade className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/contact?intent=project"
+              className="group inline-flex items-center gap-2 rounded-full bg-lime px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-lime-foreground transition-transform duration-300 hover:scale-[1.04]"
+            >
+              Start a project
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-foreground transition-colors duration-300 hover:border-lime hover:text-lime"
+            >
+              See the work
+            </Link>
+          </div>
+        </div>
+
+        <div
+          data-hero-fade
+          className="mt-12 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground md:mt-16"
+        >
+          <span className="flex items-center gap-2">
+            <ArrowDown className="h-3 w-3 animate-bounce" /> Scroll
+          </span>
+          <span className="hidden sm:block">For operators, not engineers</span>
+          <span>EST. 2024</span>
+        </div>
+      </div>
+    </section>
+  );
 }

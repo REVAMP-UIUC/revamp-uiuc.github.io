@@ -1,54 +1,81 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Mail, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { useRef } from "react";
+import { gsap, useGSAP } from "@/lib/gsap";
+import { ArrowUpRight } from "lucide-react";
 
 export function CTASection() {
-    return (
-        <section className="py-32 relative overflow-hidden">
-            {/* Background Effects */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] animate-pulse" />
-            </div>
+  const scope = useRef<HTMLElement>(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
 
-            <div className="container relative z-10 px-4 md:px-6 mx-auto text-center">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="max-w-3xl mx-auto space-y-8"
-                >
-                    <div className="inline-flex items-center space-x-2 border border-primary/30 rounded-full px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium">
-                        <Sparkles className="h-4 w-4" />
-                        <span>Ready to Innovate?</span>
-                    </div>
+  useGSAP(
+    (context, contextSafe) => {
+      gsap.from("[data-cta-line]", {
+        yPercent: 115,
+        stagger: 0.1,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: { trigger: scope.current, start: "top 70%" },
+      });
 
-                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight pb-2">
-                        Let's Build the <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Next Generation</span> of AI
-                    </h2>
+      // Magnetic button (pointer devices only)
+      const btn = buttonRef.current;
+      if (!btn || !window.matchMedia("(hover: hover)").matches) return;
 
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Whether you need a custom agentic solution or want to join our team of elite developers, we're ready to collaborate.
-                    </p>
+      const xTo = gsap.quickTo(btn, "x", { duration: 0.5, ease: "power3.out" });
+      const yTo = gsap.quickTo(btn, "y", { duration: 0.5, ease: "power3.out" });
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                        <Link href="/contact?intent=project">
-                            <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-shadow">
-                                Start a Project
-                            </Button>
-                        </Link>
-                        <Link href="/contact">
-                            <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-border hover:bg-secondary backdrop-blur-sm">
-                                <Mail className="mr-2 h-5 w-5" /> Contact Us
-                            </Button>
-                        </Link>
-                    </div>
-                </motion.div>
-            </div>
-        </section>
-    );
+      const onMove = contextSafe!((e: MouseEvent) => {
+        const rect = btn.getBoundingClientRect();
+        const dx = e.clientX - (rect.left + rect.width / 2);
+        const dy = e.clientY - (rect.top + rect.height / 2);
+        const dist = Math.hypot(dx, dy);
+        if (dist < 220) {
+          xTo(dx * 0.35);
+          yTo(dy * 0.35);
+        } else {
+          xTo(0);
+          yTo(0);
+        }
+      });
+
+      window.addEventListener("mousemove", onMove);
+      return () => window.removeEventListener("mousemove", onMove);
+    },
+    { scope }
+  );
+
+  return (
+    <section
+      ref={scope}
+      className="relative overflow-hidden border-t border-white/[0.06] px-5 py-32 text-center md:px-10 md:py-48"
+    >
+      <div className="bg-blueprint pointer-events-none absolute inset-0 opacity-40" />
+      <div className="relative mx-auto flex max-w-[1500px] flex-col items-center gap-12">
+        <p className="eyebrow text-lime">Ready when you are</p>
+        <h2 className="headline text-[13vw] text-foreground sm:text-7xl lg:text-9xl">
+          <span className="mask-line">
+            <span data-cta-line>Stop hiring for</span>
+          </span>
+          <span className="mask-line">
+            <span data-cta-line className="text-stroke">
+              repetitive work.
+            </span>
+          </span>
+        </h2>
+        <Link
+          ref={buttonRef}
+          href="/contact?intent=project"
+          className="group inline-flex items-center gap-3 rounded-full bg-lime px-10 py-5 text-sm font-bold uppercase tracking-wider text-lime-foreground transition-shadow duration-300 hover:shadow-[0_0_60px_-10px_rgba(217,249,90,0.5)]"
+        >
+          Book an intro call
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </Link>
+        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+          30 minutes · No deck · Just your workflows
+        </p>
+      </div>
+    </section>
+  );
 }
