@@ -122,11 +122,11 @@ export default function TeamPage() {
     <div className="flex min-h-screen flex-col">
       <PageHeader
         eyebrow="The team"
-        sub="A small senior team of engagement leads, delivery leads, and agent engineers — fluent in both boardrooms and codebases."
+        sub="A small senior team of engagement leads, delivery leads, and agent engineers, fluent in both boardrooms and codebases."
       >
         <HeaderLine>The humans</HeaderLine>
         <HeaderLine>
-          behind the <span className="text-stroke">agents.</span>
+          behind the <span className="text-lime">agents.</span>
         </HeaderLine>
       </PageHeader>
 

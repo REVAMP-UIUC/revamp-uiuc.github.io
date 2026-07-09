@@ -38,10 +38,10 @@ export function ManifestoSection() {
           ref={textRef}
           className="font-display max-w-5xl text-3xl font-medium leading-[1.25] tracking-tight text-foreground sm:text-4xl md:text-5xl"
         >
-          Most companies don&apos;t need an AI team — they need outcomes. We embed
+          Most companies don&apos;t need an AI team, they need outcomes. We embed
           autonomous agents inside the workflows you already run: answering calls,
-          moving paperwork, reconciling data, routing decisions. Your people keep the
-          judgment. The agents keep the grind.
+          moving paperwork, reconciling data, routing decisions. Your people call the
+          shots. The agents automate the grind.
         </p>
       </div>
     </section>

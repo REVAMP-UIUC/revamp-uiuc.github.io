@@ -5,19 +5,31 @@ import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { ArrowUpRight } from "lucide-react";
 
-const SERVICES = [
+type ServiceDescription = string | React.ReactNode;
+
+const SERVICES: Array<{
+  index: string;
+  title: string;
+  description: ServiceDescription;
+  tags: string[];
+}> = [
   {
     index: "01",
     title: "Agentic Readiness Audit",
-    description:
-      "We map your operations end to end, find the workflows where autonomy pays for itself, and hand you a prioritized roadmap — before a single line of code.",
+    description: (
+      <>
+        We map your operations end to end, find the workflows where{" "}
+        <span className="text-lime">autonomy</span> pays for itself, and hand you a prioritized
+        roadmap, before a single line of code.
+      </>
+    ),
     tags: ["Workflow mapping", "ROI modeling", "Roadmap"],
   },
   {
     index: "02",
     title: "Custom Agent Frameworks",
     description:
-      "Multi-agent systems designed around your business — voice agents, document pipelines, RAG knowledge bases — built on proven orchestration patterns.",
+      "Multi-agent systems designed around your business, voice agents, document pipelines, RAG knowledge bases, built on proven orchestration patterns.",
     tags: ["Multi-agent systems", "Voice AI", "RAG"],
   },
   {
@@ -31,7 +43,7 @@ const SERVICES = [
     index: "04",
     title: "Governance & Enablement",
     description:
-      "Compliance guardrails, audit trails, and human-in-the-loop controls — plus training so your team owns the system after we leave.",
+      "Compliance guardrails, audit trails, and human-in-the-loop controls, plus training so your team owns the system after we leave.",
     tags: ["Compliance", "Guardrails", "Training"],
   },
 ];
@@ -73,7 +85,7 @@ export function ServicesSection() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Four engagements, one outcome: agentic systems that run your operations —
+            Four engagements, one outcome: agentic systems that run your operations,
             without you hiring a machine learning team.
           </p>
         </div>

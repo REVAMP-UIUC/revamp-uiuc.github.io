@@ -28,11 +28,11 @@ function ContactContent() {
     <div className="flex min-h-screen flex-col">
       <PageHeader
         eyebrow="Contact"
-        sub="Thirty minutes, no deck. Walk us through the workflows that drain your team and we'll tell you — honestly — whether agents can carry them."
+        sub="Thirty minutes, no deck. Walk us through the workflows that drain your team and we'll tell you, honestly, whether agents can carry them."
       >
         <HeaderLine>Tell us what</HeaderLine>
         <HeaderLine>
-          <span className="text-stroke">eats your week.</span>
+          <span className="text-lime">eats your week.</span>
         </HeaderLine>
       </PageHeader>
 
@@ -52,12 +52,12 @@ function ContactContent() {
                   Start a project
                 </h2>
                 <p className="text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-lime-foreground/80">
-                  You have a workflow in mind — calls to make, documents to move, data to
+                  You have a workflow in mind, calls to make, documents to move, data to
                   reconcile. Let&apos;s scope what an agentic system would look like.
                 </p>
               </div>
               <span className="eyebrow mt-auto text-muted-foreground transition-colors duration-300 group-hover:text-lime-foreground/70">
-                Avg. response — same day
+                Avg. response, same day
               </span>
             </button>
           </Reveal>
@@ -95,16 +95,16 @@ function ContactContent() {
             </p>
             <div className="grid grid-cols-1 gap-4 font-mono text-xs leading-relaxed text-muted-foreground md:grid-cols-3">
               <p>
-                <span className="text-foreground">01 —</span> The workflow: what happens
+                <span className="text-foreground">01 -</span> The workflow: what happens
                 today, step by step, and who does it.
               </p>
               <p>
-                <span className="text-foreground">02 —</span> The volume: how often it
+                <span className="text-foreground">02 -</span> The volume: how often it
                 runs and roughly what it costs you.
               </p>
               <p>
-                <span className="text-foreground">03 —</span> The stack: the tools it
-                touches — CRM, phones, spreadsheets, anything.
+                <span className="text-foreground">03 -</span> The stack: the tools it
+                touches, CRM, phones, spreadsheets, anything.
               </p>
             </div>
           </div>

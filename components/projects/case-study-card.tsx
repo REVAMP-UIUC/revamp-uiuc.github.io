@@ -55,7 +55,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
             <span className="h-2.5 w-2.5 rounded-full bg-lime/60" />
           </div>
           <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-            agent.run — live
+            agent.run, live
           </span>
         </div>
         <div className="min-h-[150px] space-y-1.5 font-mono text-[11px] leading-relaxed md:text-xs">
@@ -79,9 +79,12 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
 
       {/* Meta */}
       <div className="flex flex-grow flex-col p-6 pt-3 md:p-8 md:pt-4">
+        <h4 className="headline mb-6 text-xl font-bold text-foreground md:text-2xl">
+          {study.client}
+        </h4>
         <div className="mb-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
           <span>
-            {study.client} · {study.industry}
+            {study.category} · {study.industry}
           </span>
           <span>{study.year}</span>
         </div>

@@ -19,7 +19,7 @@ function Row({ items }: { items: string[] }) {
     <div data-marquee-track className="flex shrink-0 items-center">
       {items.map((item, i) => (
         <span key={i} className="flex items-center">
-          <span className="headline whitespace-nowrap px-6 text-5xl uppercase text-stroke md:px-10 md:text-7xl">
+          <span className="headline whitespace-nowrap px-6 text-5xl uppercase text-lime md:px-10 md:text-7xl">
             {item}
           </span>
           <span className="text-2xl text-lime md:text-3xl">✦</span>

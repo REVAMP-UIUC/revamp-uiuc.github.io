@@ -13,6 +13,66 @@ export type CaseStudy = {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "hdf-group",
+    client: "HDF Group",
+    title: "HDF5 - AI Sustainability Pipeline",
+    category: "Code Generation",
+    industry: "Scientific Computing",
+    year: "2026",
+    description:
+      "A verification-gated AI pipeline that generates and validates refactoring diffs for the HDF5 C library, 25 years of critical scientific computing infrastructure used across research institutions and government agencies. The system is designed to be subtractive: worst-case output is nothing. It cannot make the codebase worse, only improved or untouched.",
+    outcome: "Ongoing engagement",
+    tags: ["Python", "GitHub Actions", "ChromaDB", "CodeQL", "AddressSanitizer", "Lizard"],
+    logs: [
+      "> Analyzing HDF5 codebase...",
+      "> Source files scanned: 247",
+      "> Generating refactoring candidates...",
+      "> CodeQL verification: 47 checks running",
+      "> AddressSanitizer validation: PASSED",
+      "> Diff approved for review",
+    ],
+  },
+  {
+    slug: "brand-brain",
+    client: "Llama Naturals",
+    title: "Brand Brain",
+    category: "Knowledge Platform",
+    industry: "Consumer Health",
+    year: "2025",
+    description:
+      "A grounded RAG platform where internal teams and partners query brand knowledge through chat that cites its sources, with 15 FDA/FTC compliance rules enforced on every output.",
+    outcome: "15 FDA/FTC rules enforced on every answer",
+    tags: ["Next.js", "FastAPI", "pgvector", "Claude"],
+    logs: [
+      "> Query: 'What claims can we make about Vitamin C?'",
+      "> Hybrid Search: vector + full-text [docs: 3]",
+      "> Compliance Check: FDA/FTC rules [15/15 passed]",
+      "> Brand Voice: Injecting persona...",
+      "> Response grounded in 3 source documents",
+      "> Confidence: HIGH [0.92], Answer generated.",
+    ],
+  },
+  {
+    slug: "whai-platform",
+    client: "WHAI Technologies",
+    title: "Agent Orchestration Platform",
+    category: "Multi-Agent Systems",
+    industry: "Enterprise SaaS",
+    year: "2026",
+    description:
+      "A production Router → Planner → Executor → Verifier pipeline with a real-time monitoring dashboard, knowledge base, and retrieval testing, the company's agentic backbone.",
+    outcome: "4-stage pipeline, 0.94 avg quality score",
+    tags: ["FastAPI", "React", "SQLite", "Recharts"],
+    logs: [
+      "> Ingesting: 'Analyze Q1 sales performance'",
+      "> Router: Classified → analytics_workflow [0.91]",
+      "> Planner: Generated 4-step execution plan",
+      "> Executor: Steps [1/4]→[2/4]→[3/4]→[4/4] ✓",
+      "> Verifier: Quality score 0.94, PASSED",
+      "> Task Complete. Duration: 2.3s",
+    ],
+  },
+  {
     slug: "atlas-voice",
     client: "Atlas Realty Group",
     title: "Voice Feedback Engine",
@@ -20,7 +80,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "Real Estate",
     year: "2025",
     description:
-      "An autonomous voice agent that calls buyers after every showing, holds a natural conversation, and logs structured feedback straight into the CRM — no agent follow-up required.",
+      "An autonomous voice agent that calls buyers after every showing, holds a natural conversation, and logs structured feedback straight into the CRM, no agent follow-up required.",
     outcome: "100% of showings followed up within 2 hours",
     tags: ["Twilio", "Deepgram", "ElevenLabs", "GPT-4"],
     logs: [
@@ -51,46 +111,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "> Routing to: Restricted Response Agent",
       "> Generating Neutral Response...",
       "> Response Sent: 'I can show you homes in any area...'",
-    ],
-  },
-  {
-    slug: "brand-brain",
-    client: "Llama Naturals",
-    title: "Brand Brain",
-    category: "Knowledge Platform",
-    industry: "Consumer Health",
-    year: "2025",
-    description:
-      "A grounded RAG platform where internal teams and partners query brand knowledge through chat that cites its sources — with 15 FDA/FTC compliance rules enforced on every output.",
-    outcome: "15 FDA/FTC rules enforced on every answer",
-    tags: ["Next.js", "FastAPI", "pgvector", "Claude"],
-    logs: [
-      "> Query: 'What claims can we make about Vitamin C?'",
-      "> Hybrid Search: vector + full-text [docs: 3]",
-      "> Compliance Check: FDA/FTC rules [15/15 passed]",
-      "> Brand Voice: Injecting persona...",
-      "> Response grounded in 3 source documents",
-      "> Confidence: HIGH [0.92] — Answer generated.",
-    ],
-  },
-  {
-    slug: "whai-platform",
-    client: "WHAI Technologies",
-    title: "Agent Orchestration Platform",
-    category: "Multi-Agent Systems",
-    industry: "Enterprise SaaS",
-    year: "2026",
-    description:
-      "A production Router → Planner → Executor → Verifier pipeline with a real-time monitoring dashboard, knowledge base, and retrieval testing — the company's agentic backbone.",
-    outcome: "4-stage pipeline, 0.94 avg quality score",
-    tags: ["FastAPI", "React", "SQLite", "Recharts"],
-    logs: [
-      "> Ingesting: 'Analyze Q1 sales performance'",
-      "> Router: Classified → analytics_workflow [0.91]",
-      "> Planner: Generated 4-step execution plan",
-      "> Executor: Steps [1/4]→[2/4]→[3/4]→[4/4] ✓",
-      "> Verifier: Quality score 0.94 — PASSED",
-      "> Task Complete. Duration: 2.3s",
     ],
   },
 ];

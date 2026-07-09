@@ -14,7 +14,7 @@ const VERTEX = /* glsl */ `
   void main() {
     vec3 p = position;
 
-    // Layered travelling waves — the "thinking" surface
+    // Layered travelling waves, the "thinking" surface
     float t = uTime * 0.6;
     float wave =
         sin(p.x * 0.32 + t) * 0.42

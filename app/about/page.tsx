@@ -7,7 +7,7 @@ import { ManifestoSection } from "@/components/sections/manifesto";
 import { StatsSection } from "@/components/sections/stats";
 
 export const metadata: Metadata = {
-  title: "Studio — Revamp",
+  title: "Studio - Revamp",
   description:
     "Revamp is an agentic AI consultancy. We design, build, and run autonomous agent frameworks for companies that don't write code.",
 };
@@ -35,7 +35,7 @@ const PRINCIPLES = [
     index: "04",
     title: "Leave you independent",
     description:
-      "We train your operators to run, tune, and extend the system. Success is when you stop needing us — not when the retainer renews.",
+      "We train your operators to run, tune, and extend the system. Success is when you stop needing us, not when the retainer renews.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <PageHeader
         eyebrow="The studio"
-        sub="Revamp is an agentic AI consultancy. We embed autonomous agents inside the operations of non-technical companies — and stay until they're carrying real weight."
+        sub="Revamp is an agentic AI consultancy. We embed autonomous agents inside the operations of non-technical companies, and stay until they're carrying real weight."
       >
         <HeaderLine>We are the AI team</HeaderLine>
         <HeaderLine>
@@ -100,7 +100,7 @@ export default function AboutPage() {
             <Reveal delay={0.1}>
               <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Today we work with operators in real estate, healthcare, logistics, and
-                consumer brands — teams with deep domain knowledge and zero interest in
+                consumer brands, teams with deep domain knowledge and zero interest in
                 becoming software companies. That&apos;s exactly who we built Revamp for.
               </p>
             </Reveal>

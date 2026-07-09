@@ -5,9 +5,9 @@ import { PageHeader, HeaderLine } from "@/components/anim/page-header";
 import { Reveal } from "@/components/anim/reveal";
 
 export const metadata: Metadata = {
-  title: "Careers — Revamp",
+  title: "Join - Revamp",
   description:
-    "Join Revamp and build autonomous agent systems that run real businesses. Engineering, product, and design roles.",
+    "Join Revamp and build autonomous agent systems that run real businesses. Engineering and marketing roles.",
 };
 
 const ROLES = [
@@ -16,24 +16,16 @@ const ROLES = [
     icon: Code,
     title: "Agent Engineer",
     description:
-      "Design and ship multi-agent systems — orchestration, RAG pipelines, voice agents — that survive contact with production workloads.",
+      "Design and ship multi-agent systems, orchestration, RAG pipelines, voice agents, that survive contact with production workloads.",
     skills: ["Python / TypeScript", "LangChain · AutoGen", "RAG & evals"],
   },
   {
     index: "02",
-    icon: Users,
-    title: "Engagement Manager",
-    description:
-      "Own client relationships end to end. Translate messy operational reality into agent architectures engineers can build.",
-    skills: ["Client strategy", "Workflow mapping", "Agile delivery"],
-  },
-  {
-    index: "03",
     icon: Zap,
-    title: "Product Designer",
+    title: "Marketing Lead",
     description:
-      "Make autonomy legible. Design the dashboards, approvals, and interfaces where humans supervise their agents.",
-    skills: ["Figma / Next.js", "Design systems", "Data visualization"],
+      "Tell the story of autonomous agents. Create content, campaigns, and brand experiences that show why Revamp matters.",
+    skills: ["Content strategy", "Brand narrative", "Community building"],
   },
 ];
 
@@ -41,12 +33,12 @@ export default function JoinPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <PageHeader
-        eyebrow="Careers — applications open for Spring 2026"
-        sub="We hire people who want their code, strategy, and design running inside real businesses — not sitting in a slide deck."
+        eyebrow="Build with us - applications open for Spring 2026"
+        sub="We hire people who want their code, strategy, and design running inside real businesses, not sitting in a slide deck."
       >
-        <HeaderLine>Build the</HeaderLine>
+        <HeaderLine>Build the <span className="text-lime">autonomous</span></HeaderLine>
         <HeaderLine>
-          <span className="text-stroke">autonomous</span> era.
+          era with us.
         </HeaderLine>
       </PageHeader>
 

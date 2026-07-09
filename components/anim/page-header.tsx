@@ -5,7 +5,7 @@ import { gsap, useGSAP } from "@/lib/gsap";
 
 type PageHeaderProps = {
   eyebrow: string;
-  /** Headline content — wrap each line in <HeaderLine>. */
+  /** Headline content, wrap each line in <HeaderLine>. */
   children: React.ReactNode;
   sub?: string;
 };

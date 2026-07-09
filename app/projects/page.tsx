@@ -6,9 +6,9 @@ import { CTASection } from "@/components/sections/cta";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
-  title: "Work — Revamp",
+  title: "Work - Revamp",
   description:
-    "Case studies in autonomy: voice agents, compliance routers, knowledge platforms, and multi-agent orchestration — deployed in production.",
+    "Case studies in autonomy: voice agents, compliance routers, knowledge platforms, and multi-agent orchestration, deployed in production.",
 };
 
 export default function ProjectsPage() {
@@ -16,11 +16,11 @@ export default function ProjectsPage() {
     <div className="flex min-h-screen flex-col">
       <PageHeader
         eyebrow="Selected work"
-        sub="Every system below runs in production today — answering calls, enforcing compliance, and orchestrating work for companies without an engineering org."
+        sub="Every system below runs in production today, answering calls, enforcing compliance, and orchestrating work for companies without an engineering org."
       >
         <HeaderLine>Case studies</HeaderLine>
         <HeaderLine>
-          in <span className="text-stroke">autonomy.</span>
+          in <span className="text-lime">autonomy.</span>
         </HeaderLine>
       </PageHeader>
 

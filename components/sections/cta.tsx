@@ -59,7 +59,7 @@ export function CTASection() {
             <span data-cta-line>Stop hiring for</span>
           </span>
           <span className="mask-line">
-            <span data-cta-line className="text-stroke">
+            <span data-cta-line className="text-lime">
               repetitive work.
             </span>
           </span>
@@ -70,7 +70,7 @@ export function CTASection() {
           className="group inline-flex items-center gap-3 rounded-full bg-lime px-10 py-5 text-sm font-bold uppercase tracking-wider text-lime-foreground transition-shadow duration-300 hover:shadow-[0_0_60px_-10px_rgba(217,249,90,0.5)]"
         >
           Book an intro call
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300" />
         </Link>
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           30 minutes · No deck · Just your workflows

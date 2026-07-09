@@ -20,9 +20,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Revamp — Agentic AI Consulting",
+  title: "Revamp - Agentic AI Consulting",
   description:
-    "Revamp designs, builds, and deploys autonomous AI agent frameworks for companies that don't write code. Strategy, engineering, and deployment — end to end.",
+    "Revamp designs, builds, and deploys autonomous AI agent frameworks for companies that don't write code. Strategy, engineering, and deployment, end to end.",
   icons: {
     icon: { url: "/logo.svg", type: "image/svg+xml" },
   },

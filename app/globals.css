@@ -38,7 +38,7 @@
 }
 
 /*
-  Single dark theme — the brand lives in the dark.
+  Single dark theme, the brand lives in the dark.
 */
 :root {
   --radius: 0.25rem;
@@ -123,10 +123,11 @@
     color: transparent;
   }
 
-  /* Masked line reveal helper — children animate yPercent */
+  /* Masked line reveal helper, children animate yPercent */
   .mask-line {
     display: block;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: visible;
   }
 
   .mask-line>* {

@@ -52,7 +52,7 @@ export function HeroSection() {
   );
 
   return (
-    <section ref={scope} className="relative flex min-h-svh flex-col overflow-hidden">
+    <section ref={scope} className="relative flex min-h-svh flex-col overflow-x-visible overflow-y-hidden">
       {/* Three.js particle field */}
       <HeroCanvas className="absolute inset-0 z-0" />
       {/* Legibility gradients */}
@@ -60,25 +60,20 @@ export function HeroSection() {
 
       <div
         data-hero-content
-        className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-grow flex-col justify-end px-5 pb-14 pt-40 md:px-10 md:pb-20"
+        className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-grow flex-col justify-end px-5 pb-14 pt-40 md:px-10 md:pb-20"
       >
         <p data-hero-fade className="eyebrow mb-8 flex items-center gap-3 text-lime">
           <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime" />
           Agentic AI Consulting
         </p>
 
-        <h1 className="headline text-[13.5vw] text-foreground sm:text-[11vw] lg:text-[8.6rem] xl:text-[9.5rem]">
+        <h1 className="headline py-8 w-full text-[13.5vw] text-foreground sm:text-[11vw] lg:text-[8.6rem] xl:text-[9.5rem]">
           <span className="mask-line">
             <span data-hero-line>Autonomous AI,</span>
           </span>
           <span className="mask-line">
             <span data-hero-line>
-              built for the <span className="text-stroke">non-</span>
-            </span>
-          </span>
-          <span className="mask-line">
-            <span data-hero-line>
-              <span className="text-stroke">technical</span> world.
+              built around <span className="text-lime">you.</span>
             </span>
           </span>
         </h1>
@@ -88,7 +83,7 @@ export function HeroSection() {
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <p data-hero-fade className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
             We design, build, and run agentic frameworks for companies that don&apos;t
-            write code — turning your everyday operations into an autonomous workforce.
+            write code, turning your everyday operations into an autonomous workforce.
           </p>
 
           <div data-hero-fade className="flex flex-wrap items-center gap-4">

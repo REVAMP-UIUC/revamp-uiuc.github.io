@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/projects", label: "Work" },
   { href: "/about", label: "Studio" },
   { href: "/team", label: "Team" },
-  { href: "/join", label: "Careers" },
+  { href: "/join", label: "Join" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -170,7 +170,7 @@ export function Navbar() {
           >
             Start a project <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <p className="eyebrow text-muted-foreground">Agentic AI Consulting — Worldwide</p>
+          <p className="eyebrow text-muted-foreground">Agentic AI Consulting, Worldwide</p>
         </div>
       </div>
     </>

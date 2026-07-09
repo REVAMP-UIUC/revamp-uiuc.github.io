@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
-import { ArrowUpRight, Github, Linkedin, Instagram } from "lucide-react";
+import { ArrowUpRight, Linkedin, Instagram } from "lucide-react";
 
 const NAV = [
   { href: "/projects", label: "Work" },
   { href: "/about", label: "Studio" },
   { href: "/team", label: "Team" },
-  { href: "/join", label: "Careers" },
+  { href: "/join", label: "Join" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,7 +63,7 @@ export function Footer() {
             className="group inline-flex w-fit items-center gap-3 rounded-full border border-lime/40 px-8 py-4 text-sm font-bold uppercase tracking-wider text-lime transition-colors duration-300 hover:bg-lime hover:text-lime-foreground"
           >
             Book an intro call
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300" />
           </Link>
         </div>
 
@@ -81,13 +81,6 @@ export function Footer() {
             ))}
           </nav>
           <div className="flex items-center gap-5">
-            <Link
-              aria-label="GitHub"
-              href="https://github.com/REVAMP-UIUC"
-              className="text-muted-foreground transition-colors hover:text-lime"
-            >
-              <Github className="h-5 w-5" />
-            </Link>
             <Link
               aria-label="LinkedIn"
               href="https://www.linkedin.com/company/revamp-uiuc/"
@@ -113,7 +106,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-2 border-t border-white/[0.06] py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[11px] text-muted-foreground">
-            &copy; {new Date().getFullYear()} REVAMP — Agentic AI Consulting
+            &copy; {new Date().getFullYear()} REVAMP - Agentic AI Consulting
           </p>
           <p className="font-mono text-[11px] text-muted-foreground">
             HUMANS × AGENTS, IN PRODUCTION<span className="blink text-lime">_</span>

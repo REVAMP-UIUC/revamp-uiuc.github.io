@@ -35,7 +35,7 @@ const STEPS = [
     icon: Rocket,
     duration: "Week 11–12",
     description:
-      "Agents go live inside your real stack — CRM, phones, inboxes, ERPs. We run them in shadow mode first, then hand over the keys gradually.",
+      "Agents go live inside your real stack, CRM, phones, inboxes, ERPs. We run them in shadow mode first, then hand over the keys gradually.",
   },
   {
     index: "05",
@@ -118,7 +118,7 @@ export function ProcessSection() {
                 className="group flex w-full flex-col justify-between rounded-2xl border border-white/[0.08] bg-background/80 p-7 backdrop-blur-sm transition-colors duration-500 hover:border-lime/50 md:p-9 lg:h-[420px] lg:w-[420px] lg:shrink-0"
               >
                 <div className="flex items-start justify-between">
-                  <span className="headline text-6xl text-white/[0.08] transition-colors duration-500 group-hover:text-lime/25 lg:text-7xl">
+                  <span className="headline text-6xl text-white/[0.08] transition-colors duration-500 group-hover:text-lime lg:text-7xl">
                     {step.index}
                   </span>
                   <step.icon className="h-6 w-6 text-lime" />
@@ -135,7 +135,7 @@ export function ProcessSection() {
 
             {/* End card */}
             <div className="hidden items-center lg:flex lg:w-[360px] lg:shrink-0">
-              <p className="headline text-5xl leading-tight text-stroke">
+              <p className="headline text-5xl leading-tight text-lime">
                 Your ops,
                 <br />
                 on autopilot.
